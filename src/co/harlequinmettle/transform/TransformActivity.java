@@ -34,7 +34,7 @@ public class TransformActivity extends Activity implements OnTouchListener {
 	private DisplayMetrics metrics = new DisplayMetrics();
 	float sw, sh;
 	float bmw, bmh;
-	float textSize = 25;
+	float textSize = 20;
 	float tX = 200, tY = 150, scaleFactorX = 1, scaleFactorY = 1, skewFactorX = 0, skewFactorY = 0, rotation = 0;
 	float scale;
 	float minButtonWidth;
@@ -51,6 +51,7 @@ public class TransformActivity extends Activity implements OnTouchListener {
 		float minD = sw < sh ? sw : sh;
 		if (minD < 760)
 			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
 		tX = sw / 2;
 		tY = sh / 4;
 		scale = getResources().getDisplayMetrics().density;
@@ -251,7 +252,7 @@ public class TransformActivity extends Activity implements OnTouchListener {
 
 			}
 			for (int i = 0; i < 3; i++) {
-				c.drawText(transforms[description[orderOfOp][i]], sw / 2, sh - (2 - i) * textSize, textPaint2);
+				c.drawText(transforms[description[orderOfOp][i]], sw / 2, sh - (2 - i) * textSize - 65, textPaint2);
 			}
 		}
 	}
